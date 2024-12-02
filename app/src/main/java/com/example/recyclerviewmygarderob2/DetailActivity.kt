@@ -2,9 +2,9 @@ package com.example.recyclerviewmygarderob2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -13,8 +13,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.recyclerviewmygarderob.R
 
 class DetailActivity : AppCompatActivity() {
@@ -31,7 +29,6 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_detail)
-
 
         layoutLL = findViewById(R.id.layoutLL)
         toolbarMain = findViewById(R.id.toolbarMain)
@@ -69,6 +66,7 @@ class DetailActivity : AppCompatActivity() {
             dialog.setView(dialogView)
             val editName = dialogView.findViewById(R.id.updateNameET) as EditText
             val editDescription = dialogView.findViewById(R.id.updateDescriptionET) as EditText
+
             dialog.setTitle("Обновить запись")
             dialog.setMessage("Введите данные ниже: ")
             dialog.setPositiveButton("Обновить") { _, _ ->
