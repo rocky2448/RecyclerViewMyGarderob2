@@ -17,35 +17,17 @@
             android:contentDescription="@string/image_clothes"
             android:src="@drawable/ic_image_blank"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/nameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/nameTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/clothes"
-                android:textSize="24sp"
-
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/descriptionTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/descriptionClothes"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
-
-
-        </LinearLayout>
+            android:text="@string/name"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black" />
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

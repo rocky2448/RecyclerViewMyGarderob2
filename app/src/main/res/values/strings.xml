@@ -2,8 +2,10 @@
     <string name="app_name">RecyclerViewMyGarderob</string>
     <string name="my_garderob">Мой гардероб</string>
     <string name="in_garderob">К гардеробу</string>
-    <string name="clothes">Одежда</string>
+    <string name="name">Название</string>
     <string name="descriptionClothes">Описание одежды</string>
     <string name="image_clothes">IMG</string>
     <string name="exit">Выход</string>
+    <string name="updateName">Введите название</string>
+    <string name="updateDescription">Введите описание</string>
 </resources>

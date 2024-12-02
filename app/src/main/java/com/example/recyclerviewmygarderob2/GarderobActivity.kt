@@ -1,5 +1,6 @@
-package com.example.recyclerviewmygarderob
+package com.example.recyclerviewmygarderob2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerviewmygarderob.R
 
 class GarderobActivity : AppCompatActivity() {
 
@@ -60,7 +62,30 @@ class GarderobActivity : AppCompatActivity() {
         toolbarMain.setLogo(R.drawable.ic_clothes)
 
         recyclerViewRV.layoutManager = LinearLayoutManager(this)
-        recyclerViewRV.adapter = CustomAdapter(clothesss)
+        val adapter = CustomAdapter(clothesss)
+        recyclerViewRV.adapter = adapter
+        recyclerViewRV.setHasFixedSize(true)
+        adapter.setOnClothesClickListener(object :
+        CustomAdapter.OnClothesClickListener {
+            override fun OnClothesClick(clothes: Clothes, position: Int) {
+                val intent = Intent(this@GarderobActivity, DetailActivity::class.java)
+                intent.putExtra("clothes", clothes)
+                intent.putExtra("position", position)
+                startActivity(intent)
+
+
+            }
+
+        })
+
+        var updateClothes: Clothes? = null
+        if (intent.hasExtra("clothes") && intent.hasExtra("position")) {
+            updateClothes = intent.getSerializableExtra("clothes") as Clothes
+            val position = intent.getIntExtra("position", 0)
+            clothesss[position] = updateClothes
+            recyclerViewRV.adapter = adapter
+            adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
